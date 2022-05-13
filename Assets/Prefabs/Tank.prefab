@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4157446434373897061}
   m_Layer: 0
   m_Name: Tank
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,6 +47,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 2906472199112375634}
+  childMeshRenderers:
+  - {fileID: 4910146053134014673}
+  - {fileID: 4910146053134014679}
+  - {fileID: 4910146053134014681}
+  - {fileID: 4910146053134014675}
 --- !u!54 &2906472199112375634
 Rigidbody:
   m_ObjectHideFlags: 0
