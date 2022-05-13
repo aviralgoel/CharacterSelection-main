@@ -21,15 +21,13 @@ public class TankSpawner : MonoBehaviour
     // ? is it from Unity Inspector when we drag and drop?
     public TankView tankView;
     // Start is called before the first frame update
-    void Start()
+    
+    public void SpawnTank(TankTypes _type)
     {
-        SpawnTank();
-    }
-
-    private void SpawnTank()
-    {   
+        int index = (int) _type;
+        Debug.Log("index from type is " + index);
         // ? isnt tank view just empty variable at this moment?
-        TankModel tankModel = new TankModel(tankList[0].movementSpeed,tankList[0].rotationSpeed, tankList[0].Tanktype, tankList[0].tankMat);
+        TankModel tankModel = new TankModel(tankList[index].movementSpeed,tankList[index].rotationSpeed, tankList[index].Tanktype, tankList[index].tankMat);
         TankController tankController = new TankController(tankModel, tankView);
     }
 
