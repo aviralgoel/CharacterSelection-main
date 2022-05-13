@@ -1,8 +1,8 @@
 # 3D-Tank-Shooter
- <p align="center"> A 3D Tank <i>Tower Defence</i> Style Game created in Unity.
+ <p align="center"> A 3D Tank <i>Tower Defence</i> Style Game created in Unity.</p>
  
   <p align="center"><img src="TankDemo.gif" width="400" height="250"/></p>
- This is a learning project where I attempted to implement the **Model View Controller** Design Pattern to build a tank game. 
+ This is a learning project where I attempted to implement the <b>Model View Controller</b> Design Pattern to build a tank game. 
  To summarize I assigned the following responsibility to each component of the MVC:
  
  ### Model
