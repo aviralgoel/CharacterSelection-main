@@ -6,7 +6,7 @@ public class TankModel
 
     public float tankMovementSpeed;
     public float tankRotationSpeed;
-    // ? how does this script know about the existance of TankTypes enum?
+    // ? Q3. how does this script know about the existance of TankTypes enum?
     public TankTypes tankTypes;
     public Material tankMat;
 

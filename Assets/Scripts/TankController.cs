@@ -5,7 +5,8 @@ public class TankController
     private TankModel tankModel;
     private TankView tankView;
     private Rigidbody rb;
-
+    private float movementSpeed;
+    private float rotateSpeed;
 
 
     public TankController(TankModel _model, TankView _view)
@@ -17,12 +18,14 @@ public class TankController
         tankView.SetTankController(this);
         rb = tankView.GetRigidbody();
         tankView.ChangeMat(tankModel.tankMat);
+        movementSpeed = tankModel.tankMovementSpeed;
+        rotateSpeed = tankModel.tankRotationSpeed;
     }
-    public void Move(float movement, float movementSpeed)
+    public void Move(float movement)
     {   
         rb.velocity = tankView.transform.forward * movementSpeed * movement;
     }
-    public void Rotate(float rotate, float rotateSpeed)
+    public void Rotate(float rotate)
     {
         // Debug.Log("playerRotate:" + rotate +", rotateSpeed:" + rotateSpeed);
         /* - most of the times rotate will be either +1 or -1.
@@ -32,7 +35,6 @@ public class TankController
 
         Quaternion deltaRotation = Quaternion.Euler(vector * Time.deltaTime);
         // Debug .Log(Time.deltaTime);
-        // ?  how does Time.deltaTime make rotation frameless independent?
        
         // Debug.Log("deltaRotation:" + deltaRotation);
         rb.MoveRotation(rb.rotation * deltaRotation);

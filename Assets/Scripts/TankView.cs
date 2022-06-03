@@ -21,17 +21,20 @@ public class TankView : MonoBehaviour
     private void Update()
     {
         Movement();
-        if(playerMovement!=0)
-        {   
-            //shouldn't controller gather thes GetAxis value and Movement Speed?
-            tankController.Move(playerMovement, tankController.GetTankModel().tankMovementSpeed);
-            //Debug.Log("GetAxisVertical" + playerMovement);
-        }
-        if(playerRotation!=0)
-        {
-            tankController.Rotate(playerRotation, tankController.GetTankModel().tankRotationSpeed);
-            //Debug.Log("GetAxisHorizontal " + playerRotation);
-        }
+        tankController.Move(playerMovement);
+        tankController.Rotate(playerRotation);
+        //if (playerMovement != 0)
+        //{
+        //    //shouldn't controller gather thes GetAxis value and Movement Speed?
+        //    tankController.Move(playerMovement);
+        //    //Debug.Log("GetAxisVertical" + playerMovement);
+        //}
+        //if (playerRotation != 0)
+        //{
+        //    tankController.Rotate(playerRotation);
+        //    //Debug.Log("GetAxisHorizontal " + playerRotation);
+        //}
+
     }
 
     private void Movement()
@@ -53,6 +56,8 @@ public class TankView : MonoBehaviour
     {
         return rb;
     }
+
+    // ? Q2. shouldn't this be part of controller? just like change of speed and rotation
     public void ChangeMat(Material mat)
     {
         for(int i = 0; i < childMeshRenderers.Length; i++)
